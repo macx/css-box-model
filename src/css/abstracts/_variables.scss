@@ -1,0 +1,29 @@
+$boxes: 'margin', 'border', 'padding', 'content';
+
+:root {
+  --spacing: 1.25rem;
+  --spacing-small: 1rem;
+  --content-spacing: var(--spacing);
+
+  --radius: 0.375rem;
+
+  --fs: 1rem;
+  --fs-small: 0.875rem;
+  --fw: normal;
+  --fw-bold: bold;
+
+  --clr-text: hsl(222 47% 11%);
+
+  --clr-line: hsl(217 33% 17% / 30%);
+  --clr-bg: hsl(210 40% 98%);
+  --clr-settings: hsl(210 40% 96%);
+
+  --clr-margin: hsl(30, 87%, 79%);
+  --clr-border: hsl(45, 97%, 87%);
+  --clr-padding: hsl(100, 37%, 79%);
+  --clr-content: rgb(137, 179, 190);
+
+  @media screen and (min-width: 40rem) {
+    --content-spacing: 2.5rem;
+  }
+}

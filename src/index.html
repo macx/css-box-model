@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Box model</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <header class="header">
+        <div class="logo">
+          <span class="logo__image"></span>
+          <span class="logo__title">
+            CSS Box model
+            <small>Interactive Model</small>
+          </span>
+        </div>
+
+        <div class="header__by">
+          v<span class="version"></span><br />
+          <span class="header__chip">
+            by <a href="https://mastodon.social/@macx" target="_blank" rel="noopener noreferrer">@macx</a>
+          </span>
+        </div>
+      </header>
+
+      <main>
+        <div class="stage">
+          <main id="wrapper" class="typical" data-boxsizing="contentbox" data-property="physical">
+            <div id="MinMax">
+              <div>
+                <div id="position">
+                  <div><span></span><span class="t">top</span><span class="l">inset-block-start</span></div>
+                  <div><span></span><span class="t">left</span><span class="l">inset-inline-start</span></div>
+                  <div id="margin">
+                    <div><span class="t">margin-top</span><span class="l">margin-block-start</span></div>
+                    <div><span class="t">margin-left</span><span class="l">margin-inline-start</span></div>
+                    <div id="border">
+                      <div>
+                        <span class="t">border-top-left-radius</span><span class="l">border-start-start-radius</span>
+                      </div>
+                      <div><span class="t">border-top</span><span class="l">border-block-start</span></div>
+                      <div>
+                        <span class="t">border-top-right-radius</span><span class="l">border-start-end-radius</span>
+                      </div>
+                      <div><span class="t">border-left</span><span class="l">border-inline-start</span></div>
+                      <div id="padding">
+                        <div><span class="t">padding-top</span><span class="l">padding-block-start</span></div>
+                        <div><span class="t">padding-left</span><span class="l">padding-inline-start</span></div>
+                        <div id="content">
+                          <div>text-align: <span class="t">left</span><span class="l">start</span></div>
+                          <div>text-align: <span class="t">right</span><span class="l">end</span></div>
+                        </div>
+                        <div><span class="t">padding-right</span><span class="l">padding-inline-end</span></div>
+                        <div><span class="t">padding-bottom</span><span class="l">padding-block-end</span></div>
+                      </div>
+                      <div><span class="t">border-right</span><span class="l">border-inline-end</span></div>
+                      <div>
+                        <span class="t">border-bottom-left-radius</span><span class="l">border-end-start-radius</span>
+                      </div>
+                      <div><span class="t">border-bottom</span><span class="l">border-block-end</span></div>
+                      <div>
+                        <span class="t">border-bottom-right-radius</span><span class="l">border-end-end-radius</span>
+                      </div>
+                    </div>
+                    <div><span class="t">margin-right</span><span class="l">margin-inline-end</span></div>
+                    <div><span class="t">margin-bottom</span><span class="l">margin-block-end</span></div>
+                  </div>
+                  <div><span class="t">right</span><span class="l">inset-inline-end</span><span></span></div>
+                  <div><span class="t">bottom</span><span class="l">inset-block-end</span><span></span></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="height min">
+                  <div></div>
+                  <div><span class="t">min-height</span><span class="l">min-block-size</span></div>
+                  <div></div>
+                </div>
+                <div class="height max">
+                  <div></div>
+                  <div><span class="t">max-height</span><span class="l">max-block-size</span></div>
+                  <div></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="width min">
+                  <div></div>
+                  <div><span class="t">min-width</span><span class="l">min-inline-size</span></div>
+                  <div></div>
+                </div>
+                <div class="width max">
+                  <div></div>
+                  <div><span class="t">max-width</span><span class="l">max-inline-size</span></div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
+          </main>
+
+          <aside id="settings">
+            <div class="settings">
+              <fieldset id="settingsBoxSizing" class="settings__block">
+                <legend>Box Sizing</legend>
+
+                <input type="radio" name="box-sizing" id="box-sizing-contentbox" value="contentbox" checked />
+                <label for="box-sizing-contentbox">content-box</label><br />
+
+                <input type="radio" name="box-sizing" id="box-sizing-boderbox" value="boderbox" />
+                <label for="box-sizing-boderbox">border-box</label><br />
+              </fieldset>
+
+              <fieldset id="settingsProperties" class="settings__block">
+                <legend>Properties</legend>
+
+                <input type="radio" name="properties" id="properties-physical" value="physical" checked />
+                <label for="properties-physical">Physical</label><br />
+
+                <input type="radio" name="properties" id="properties-logical" value="logical" />
+                <label for="properties-logical">Logical</label><br />
+              </fieldset>
+
+              <fieldset id="settingsDimensions" class="settings__block">
+                <legend>Dimensions</legend>
+
+                <div class="settings__item">
+                  <label for="dimentionWidth">Width</label>
+                  <input
+                    type="range"
+                    name="dimention-width"
+                    id="dimentionWidth"
+                    min="0"
+                    max="500"
+                    step="25"
+                    value="200"
+                    list="datalistDimensions" />
+                  <span>200</span>
+                </div>
+
+                <div class="settings__item">
+                  <label for="dimentionHeight">Height</label>
+                  <input
+                    type="range"
+                    name="dimention-height"
+                    id="dimentionHeight"
+                    min="0"
+                    max="500"
+                    step="25"
+                    value="200"
+                    list="datalistDimensions" />
+                  <span>200</span>
+                </div>
+
+                Generated:<br />
+                Width: <span id="boxWidthValue"></span><br />
+                Height: <span id="boxHeightValue"></span><br />
+              </fieldset>
+
+              <fieldset class="settings__block">
+                <legend>Padding</legend>
+
+                <div class="settings__item">
+                  <label for="paddingTop">Top</label>
+                  <input
+                    type="range"
+                    name="padding-top"
+                    id="paddingTop"
+                    min="0"
+                    max="100"
+                    step="5"
+                    value="20"
+                    list="datalistSettings" />
+                  <span>20</span>
+                </div>
+
+                <div class="settings__item">
+                  <label for="paddingRight">Right</label>
+                  <input
+                    type="range"
+                    name="padding-right"
+                    id="paddingRight"
+                    min="0"
+                    max="100"
+                    step="5"
+                    value="20"
+                    list="datalistSettings" />
+                  <span>20</span>
+                </div>
+
+                <div class="settings__item">
+                  <label for="paddingBottom">Bottom</label>
+                  <input
+                    type="range"
+                    name="padding-bottom"
+                    id="paddingBottom"
+                    min="0"
+                    max="100"
+                    step="5"
+                    value="20"
+                    list="datalistSettings" />
+                  <span>20</span>
+                </div>
+
+                <div class="settings__item">
+                  <label for="paddingLeft">Left</label>
+                  <input
+                    type="range"
+                    name="padding-left"
+                    id="paddingLeft"
+                    min="0"
+                    max="100"
+                    step="5"
+                    value="20"
+                    list="datalistSettings" />
+                  <span>20</span>
+                </div>
+              </fieldset>
+
+              <fieldset class="settings__block">
+                <legend>Border</legend>
+
+                <div class="settings__item">
+                  <label for="paddingTop">Top</label>
+                  <input
+                    type="range"
+                    name="padding-top"
+                    id="paddingTop"
+                    min="0"
+                    max="100"
+                    step="5"
+                    value="20"
+                    list="datalistSettings" />
+                  <span>20</span>
+                </div>
+
+                <div class="settings__item">
+                  <label for="paddingRight">Right</label>
+                  <input
+                    type="range"
+                    name="padding-right"
+                    id="paddingRight"
+                    min="0"
+                    max="100"
+                    step="5"
+                    value="20"
+                    list="datalistSettings" />
+                  <span>20</span>
+                </div>
+
+                <div class="settings__item">
+                  <label for="paddingBottom">Bottom</label>
+                  <input
+                    type="range"
+                    name="padding-bottom"
+                    id="paddingBottom"
+                    min="0"
+                    max="100"
+                    step="5"
+                    value="20"
+                    list="datalistSettings" />
+                  <span>20</span>
+                </div>
+
+                <div class="settings__item">
+                  <label for="paddingLeft">Left</label>
+                  <input
+                    type="range"
+                    name="padding-left"
+                    id="paddingLeft"
+                    min="0"
+                    max="100"
+                    step="5"
+                    value="20"
+                    list="datalistSettings" />
+                  <span>20</span>
+                </div>
+              </fieldset>
+
+              <fieldset class="settings__block">
+                <legend>Margin</legend>
+
+                <div class="settings__item">
+                  <label for="marginTop">Top</label>
+                  <input
+                    type="range"
+                    name="margin-top"
+                    id="marginTop"
+                    min="0"
+                    max="100"
+                    step="5"
+                    value="20"
+                    list="datalistSettings" />
+                  <span>20</span>
+                </div>
+
+                <div class="settings__item">
+                  <label for="marginRight">Right</label>
+                  <input
+                    type="range"
+                    name="margin-right"
+                    id="marginRight"
+                    min="0"
+                    max="100"
+                    step="5"
+                    value="20"
+                    list="datalistSettings" />
+                  <span>20</span>
+                </div>
+
+                <div class="settings__item">
+                  <label for="marginBottom">Bottom</label>
+                  <input
+                    type="range"
+                    name="margin-bottom"
+                    id="marginBottom"
+                    min="0"
+                    max="100"
+                    step="5"
+                    value="20"
+                    list="datalistSettings" />
+                  <span>20</span>
+                </div>
+
+                <div class="settings__item">
+                  <label for="marginLeft">Left</label>
+                  <input
+                    type="range"
+                    name="margin-left"
+                    id="marginLeft"
+                    min="0"
+                    max="100"
+                    step="5"
+                    value="20"
+                    list="datalistSettings" />
+                  <span>20</span>
+                </div>
+              </fieldset>
+            </div>
+          </aside>
+        </div>
+
+        <datalist id="datalistSettings">
+          <option value="0"></option>
+          <option value="5"></option>
+          <option value="10"></option>
+          <option value="15"></option>
+          <option value="20"></option>
+          <option value="25"></option>
+          <option value="30"></option>
+          <option value="35"></option>
+          <option value="40"></option>
+          <option value="45"></option>
+          <option value="50"></option>
+          <option value="55"></option>
+          <option value="60"></option>
+          <option value="65"></option>
+          <option value="70"></option>
+          <option value="75"></option>
+          <option value="80"></option>
+          <option value="85"></option>
+          <option value="90"></option>
+          <option value="95"></option>
+          <option value="100"></option>
+        </datalist>
+
+        <datalist id="datalistDimensions">
+          <option value="0"></option>
+          <option value="25"></option>
+          <option value="50"></option>
+          <option value="75"></option>
+          <option value="100"></option>
+          <option value="125"></option>
+          <option value="150"></option>
+          <option value="175"></option>
+          <option value="200"></option>
+          <option value="225"></option>
+          <option value="250"></option>
+          <option value="275"></option>
+          <option value="300"></option>
+          <option value="325"></option>
+          <option value="350"></option>
+          <option value="375"></option>
+          <option value="400"></option>
+          <option value="425"></option>
+          <option value="450"></option>
+          <option value="475"></option>
+          <option value="500"></option>
+        </datalist>
+      </main>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

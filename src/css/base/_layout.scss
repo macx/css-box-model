@@ -1,0 +1,90 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  font-family: system-ui;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-block: var(--spacing);
+  padding-inline: var(--content-spacing);
+  border-block-end: 1px solid var(--clr-line);
+
+  &__by {
+    text-align: right;
+    font-size: var(--fs-small);
+  }
+
+  &__chip {
+    border-radius: 0.25rem;
+    background-color: var(--clr-text);
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing);
+
+  &__image {
+    display: block;
+    width: 3rem;
+  }
+
+  &__title {
+    font-weight: var(--fw-bold);
+
+    small {
+      display: block;
+      font-weight: var(--fw);
+    }
+  }
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+
+  > main {
+    padding-inline: var(--content-spacing);
+    // border: 10px solid red;
+  }
+
+  > aside {
+    padding-inline: var(--content-spacing);
+  }
+
+  @media screen and (min-width: 70em) {
+    flex-direction: row;
+  }
+}
